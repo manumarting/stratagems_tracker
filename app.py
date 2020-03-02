@@ -48,7 +48,7 @@ def add_book():
         }
         books.insert(0, new_book)
 # Esto sirve para devolver un 201 response, content created.
-        response = Response("",201, mimetype='application/json')
+        response = Response("", 201, mimetype='application/json')
         response.headers['Location'] = "books/" + str(new_book['isbn'])
         return response
     else:
@@ -65,8 +65,8 @@ def get_book_by_isbn(isbn):
     for book in books:
         if book["isbn"] == isbn:
             return_value = {
-                'name:': book["name"],
-                'price': book["price"]
+                "name:": book['name'],
+                "price": book['price']
             }
     return jsonify(return_value)
 
